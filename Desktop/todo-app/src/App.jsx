@@ -34,9 +34,10 @@ function App() {
   };
 
   const clearCompletedHandler = () => {
-    console.log("clicked");
     setTodos((prev) => prev.filter((todo) => !todo.done));
   };
+
+  const activeTodosCount = todos.filter((todo) => !todo.done).length;
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === "active") return !todo.done;
@@ -59,10 +60,13 @@ function App() {
           onDeleteTodo={deleteTodoHandler}
           onToggleTodo={toggleTodoHandler}
         />
+        <p>
+          {activeTodosCount} {activeTodosCount === 1 ? "item" : "items"} left
+        </p>
 
         <button
           onClick={clearCompletedHandler}
-          className="mt-4 w-full bg-gray-200 rounded hover:ng-gray-300"
+          className="mt-4 w-full bg-gray-200 rounded hover:bg-gray-300"
         >
           Clear Completed
         </button>
