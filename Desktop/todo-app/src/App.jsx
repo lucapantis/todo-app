@@ -1,8 +1,7 @@
 import { useState } from "react";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
-import Butons from "./FilterButtons";
-import FilterButtons from "./FilterButtons";
+import FilterButtons from "./components/FilterButtons";
 
 function App() {
   const [todos, setTodos] = useState([]);
